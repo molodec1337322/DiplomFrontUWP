@@ -9,10 +9,10 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button x:Name="Settings" Content="Настройки" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="50,50,1100,850" Click="Button_Settings"/>
-        <Button x:Name="Experiments" Content="Эксперементы" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="50,200,1100,700" Click="Button_Experiments"/>
-        <Button x:Name="History" Content="История эксперементов" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="50,350,1100,550" Click="Button_History"/>
-        <Button x:Name="New" Content="Провести эксперемент" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="50,500,1100,400" Click="Button_New"/>
-        <Button x:Name="Analyzators" Content="Анализаторы" HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Margin="50,650,1100,250" Click="Button_Analyzators"/>
+        <Button x:Name="Settings" Content="Настройки" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,0,0,0" Click="Button_Settings" Width="350" Height="100" FontSize="22"/>
+        <Button x:Name="Experiments" Content="Эксперементы" VerticalAlignment="Top" Margin="15,125,0,0" Click="Button_Experiments" Width="350" Height="100" FontSize="22"/>
+        <Button x:Name="History" Content="История эксперементов" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,250,0,0" Click="Button_History" Width="350" Height="100" FontSize="22"/>
+        <Button x:Name="New" Content="Провести эксперемент" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,375,0,0" Click="Button_New" Width="350" Height="100" FontSize="22"/>
+        <Button x:Name="Analyzators" Content="Анализаторы" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,500,0,0" Click="Button_Analyzators" Width="350" Height="100" FontSize="22"/>
     </Grid>
 </Page>

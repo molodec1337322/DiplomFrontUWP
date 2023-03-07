@@ -29,7 +29,7 @@ namespace DiplomFrontUWP
 
         private void Button_Settings(object sender, RoutedEventArgs e)
         {
-
+            Settings.IsEnabled = false;
         }
 
         private void Button_Experiments(object sender, RoutedEventArgs e)
