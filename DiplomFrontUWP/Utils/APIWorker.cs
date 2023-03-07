@@ -13,8 +13,8 @@ namespace DiplomFrontUWP.Utils
 {
     public class APIWorker : IAPIWorker
     {
-        private string host = "https://localhost";
-        private string port = "7001";
+        private string host = "http://localhost";
+        private string port = "5265";
         private string baseURL;
 
         public APIWorker()
@@ -28,9 +28,12 @@ namespace DiplomFrontUWP.Utils
             {
                 string answer = string.Empty;
                 WebRequest request = WebRequest.Create(baseURL + "/api" + "/handler" + "/test");
+                ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
                 request.ContentType = "application/json";
                 request.Method = "GET";
                 request.Timeout = 5000;
+
+                Console.WriteLine(baseURL);
 
                 /*
                 using (StreamWriter streamWriter = new StreamWriter(request.GetRequestStream()))
