@@ -8,5 +8,11 @@ Assets\StoreLogo.png
 Assets\Wide310x150Logo.scale-200.png
 App.xbf
 DiplomFrontUWP.xr.xml
-MainPage.xbf
+Pages\Analyzators.xbf
+Pages\DoExperiment.xbf
+Pages\Experiments.xbf
+Pages\History.xbf
+Pages\MainPage.xbf
+Pages\NewExperiment.xbf
+Pages\Settings.xbf
 Properties\Default.rd.xml

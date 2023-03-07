@@ -28,6 +28,9 @@
     <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\DiplomFrontUWP.exe">
       <PackagePath>entrypoint\DiplomFrontUWP.exe</PackagePath>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Molodec\.nuget\packages\newtonsoft.json\13.0.2\lib\netstandard2.0\Newtonsoft.Json.dll">
+      <PackagePath>Newtonsoft.Json.dll</PackagePath>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.14\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
     </AppxPackagedFile>
@@ -70,8 +73,26 @@
     <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\MainPage.xbf">
-      <PackagePath>MainPage.xbf</PackagePath>
+    <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\Pages\Analyzators.xbf">
+      <PackagePath>Pages\Analyzators.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\Pages\DoExperiment.xbf">
+      <PackagePath>Pages\DoExperiment.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\Pages\Experiments.xbf">
+      <PackagePath>Pages\Experiments.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\Pages\History.xbf">
+      <PackagePath>Pages\History.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\Pages\MainPage.xbf">
+      <PackagePath>Pages\MainPage.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\Pages\NewExperiment.xbf">
+      <PackagePath>Pages\NewExperiment.xbf</PackagePath>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\Pages\Settings.xbf">
+      <PackagePath>Pages\Settings.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>

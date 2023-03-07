@@ -13,43 +13,29 @@ using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Navigation;
 
-// Документацию по шаблону элемента "Пустая страница" см. по адресу https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x419
+// Документацию по шаблону элемента "Пустая страница" см. по адресу https://go.microsoft.com/fwlink/?LinkId=234238
 
-namespace DiplomFrontUWP
+namespace DiplomFrontUWP.Pages
 {
     /// <summary>
     /// Пустая страница, которую можно использовать саму по себе или для перехода внутри фрейма.
     /// </summary>
-    public sealed partial class MainPage : Page
+    public sealed partial class Experiments : Page
     {
-        public MainPage()
+        public Experiments()
         {
             this.InitializeComponent();
-        }
-
-        private void Button_Settings(object sender, RoutedEventArgs e)
-        {
-            Settings.IsEnabled = false;
-        }
-
-        private void Button_Experiments(object sender, RoutedEventArgs e)
-        {
 
         }
 
-        private void Button_History(object sender, RoutedEventArgs e)
+        private void Button_ToMainPage(object sender, RoutedEventArgs e)
         {
-
+            Frame.Navigate(typeof(MainPage));
         }
 
-        private void Button_New(object sender, RoutedEventArgs e)
+        private void Button_CreateNewExperiment(object sender, RoutedEventArgs e)
         {
-
-        }
-
-        private void Button_Analyzators(object sender, RoutedEventArgs e)
-        {
-
+            Frame.Navigate(typeof(NewExperiment));
         }
     }
 }

@@ -12,14 +12,35 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Content" />
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
+      <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="FontSize" />
       <RootEvent Name="Click" />
     </RootType>
+    <RootType FullName="DiplomFrontUWP.Pages.Analyzators" />
+    <RootType FullName="DiplomFrontUWP.Pages.DoExperiment" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ListView">
+      <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="DiplomFrontUWP.Pages.Experiments" />
+    <RootType FullName="DiplomFrontUWP.Pages.History" />
     <RootType FullName="DiplomFrontUWP.MainPage" />
+    <RootType FullName="DiplomFrontUWP.Pages.NewExperiment" />
+    <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="TextWrapping" />
+      <RootProperty Name="Text" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Header" />
+      <RootProperty Name="IsEnabled" />
+    </RootType>
+    <RootType FullName="DiplomFrontUWP.Settings" />
   </Roots.RootTypes>
 </Roots>

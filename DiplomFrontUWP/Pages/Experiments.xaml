@@ -1,0 +1,17 @@
+﻿<Page
+    x:Class="DiplomFrontUWP.Pages.Experiments"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:DiplomFrontUWP.Pages"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Grid>
+
+        <Button x:Name="toMainPageBtn" Content="Главное меню" Margin="0,0,15,15" VerticalAlignment="Bottom" Width="350" Height="100" HorizontalAlignment="Right" Click="Button_ToMainPage" FontSize="22"/>
+        <Button x:Name="createNewExperimentBtn" Content="Новый эксперемент" Margin="0,0,400,15" VerticalAlignment="Bottom" Width="350" Height="100" HorizontalAlignment="Right" Click="Button_CreateNewExperiment" FontSize="22"/>
+        <ListView Margin="10,10,15,150"/>
+    </Grid>
+</Page>
