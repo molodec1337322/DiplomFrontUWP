@@ -10,8 +10,25 @@
 
     <Grid>
 
-        <Button x:Name="toMainPageBtn" Content="Главное меню" Margin="0,0,15,15" VerticalAlignment="Bottom" Width="350" Height="100" HorizontalAlignment="Right" Click="Button_ToMainPage" FontSize="22"/>
-        <Button x:Name="createNewExperimentBtn" Content="Новый эксперемент" Margin="0,0,400,15" VerticalAlignment="Bottom" Width="350" Height="100" HorizontalAlignment="Right" Click="Button_CreateNewExperiment" FontSize="22"/>
-        <ListView Margin="10,10,15,150"/>
+        <Button x:Name="toMainPageBtn" Content="Главное меню" Margin="0,0,15,15" VerticalAlignment="Bottom" Width="250" Height="50" HorizontalAlignment="Right" Click="Button_ToMainPage" FontSize="22"/>
+        <Button x:Name="createNewExperimentBtn" Content="Новый эксперемент" Margin="0,0,300,15" VerticalAlignment="Bottom" Width="250" Height="50" HorizontalAlignment="Right" Click="Button_CreateNewExperiment" FontSize="22"/>
+        
+        <ListView x:Name="experimentsList" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="10,10,0,150">
+
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="300" />
+                            <ColumnDefinition Width="300" />
+                            <ColumnDefinition Width="300" />
+                        </Grid.ColumnDefinitions>
+                        <TextBlock Text="{Binding Name}" Grid.Column="0" />
+                        <TextBlock Text="{Binding Data}" Grid.Column="1" />
+                        <Button Content="Удалить" Grid.Column="2"/>
+                    </Grid>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
     </Grid>
 </Page>

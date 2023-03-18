@@ -1,4 +1,6 @@
 ﻿using DiplomFrontUWP.Pages;
+using DiplomFrontUWP.Utils;
+using DiplomFrontUWP.Utils.Interfaces;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -27,10 +29,14 @@ namespace DiplomFrontUWP
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        IAPIWorker _apiWorker;
+
         public MainPage()
         {
             this.InitializeComponent();
         }
+
+        
 
         private void Button_Settings(object sender, RoutedEventArgs e)
         {

@@ -9,7 +9,7 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button x:ConnectionId='2' x:Name="toMainPageBtn" Content="Главное меню" Margin="0,0,15,15" VerticalAlignment="Bottom" Width="350" Height="100" HorizontalAlignment="Right"                           FontSize="22"/>
+        <Button x:ConnectionId='2' x:Name="toMainPageBtn" Content="Главное меню" Margin="0,0,15,15" VerticalAlignment="Bottom" Width="250" Height="50" HorizontalAlignment="Right"                           FontSize="22"/>
     </Grid>
 </Page>
 

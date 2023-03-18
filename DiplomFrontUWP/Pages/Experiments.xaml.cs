@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DiplomFrontUWP.Utils;
+using DiplomFrontUWP.Utils.Interfaces;
+using DiplomFrontUWP.Utils.Responses;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,10 +25,23 @@ namespace DiplomFrontUWP.Pages
     /// </summary>
     public sealed partial class Experiments : Page
     {
+        private IAPIWorker _apiWorker;
+        List<ExperimentResponse> experiments;
+
         public Experiments()
         {
+            _apiWorker = new APIWorker();
+            GetData();
             this.InitializeComponent();
+        }
 
+        private async void GetData()
+        {
+            experiments = await _apiWorker.GetExperimentsList();
+            foreach(ExperimentResponse experiment in experiments)
+            {
+                experimentsList.Items.Add(experiment);
+            }
         }
 
         private void Button_ToMainPage(object sender, RoutedEventArgs e)

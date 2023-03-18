@@ -1,4 +1,7 @@
-﻿using System;
+﻿using DiplomFrontUWP.Utils;
+using DiplomFrontUWP.Utils.Interfaces;
+using DiplomFrontUWP.Utils.Responses;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -22,14 +25,35 @@ namespace DiplomFrontUWP
     /// </summary>
     public sealed partial class Settings : Page
     {
+        IAPIWorker _apiWorker;
         public Settings()
         {
+            _apiWorker = new APIWorker();
+            GetInitSettingsData();
             this.InitializeComponent();
+        }
+
+        private async void GetInitSettingsData()
+        {
+            SettingsData.COMPorts = await _apiWorker.GetAvaliableUSBPorts();
+            if (SettingsData.COMPorts.Count > 0)
+            {
+                SettingsData.SelectedComPort = SettingsData.COMPorts[0].port;
+                foreach (USBPortsResponse avaliablePort in SettingsData.COMPorts)
+                {
+                    ArduinoPortListBox.Items.Add(avaliablePort.port);
+                }
+            }
         }
 
         private void Button_ToMainPage(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage));
+        }
+
+        private void ArduinoPortListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            SettingsData.SelectedComPort = ArduinoPortListBox.SelectedValue.ToString();
         }
     }
 }

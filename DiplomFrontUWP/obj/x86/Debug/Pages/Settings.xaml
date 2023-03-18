@@ -9,10 +9,10 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Button x:ConnectionId='2' x:Name="toMainPageBtn" Content="Главное меню" Margin="0,0,15,15" VerticalAlignment="Bottom" Width="350" Height="100" HorizontalAlignment="Right"                           FontSize="22"/>
-        
+        <Button x:ConnectionId='2' x:Name="toMainPageBtn" Content="Главное меню" Margin="0,0,15,15" VerticalAlignment="Bottom" Width="250" Height="50" HorizontalAlignment="Right"                           FontSize="22"/>
+
         <TextBox x:ConnectionId='3' x:Name="CaptureModuleTextBox" HorizontalAlignment="Left" Margin="10,125,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="22" Width="500" Height="100" Header="Модуль захвата" IsEnabled="False"/>
-        <TextBox x:ConnectionId='4' x:Name="ArduinoPortTextBox" HorizontalAlignment="Left" Margin="10,250,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="22" Width="500" Height="100" Header="Порт Arduino" IsEnabled="False"/>
+        <ListBox x:ConnectionId='4' x:Name="ArduinoPortListBox" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top" FontSize="22" Width="500" Height="75" ItemsSource="{Binding Port}"                                                       />
 
     </Grid>
 </Page>
