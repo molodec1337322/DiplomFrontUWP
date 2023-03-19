@@ -1,8 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
   <Roots.PropertyPathNames>
-    <RootPropertyPathName Name="Data" />
-    <RootPropertyPathName Name="Name" />
+    <RootPropertyPathName Name="createdAt" />
+    <RootPropertyPathName Name="text" />
+    <RootPropertyPathName Name="description" />
     <RootPropertyPathName Name="Port" />
   </Roots.PropertyPathNames>
   <Roots.RootTypes>
@@ -49,7 +50,6 @@
     <RootType FullName="DiplomFrontUWP.Pages.Experiments" />
     <RootType FullName="DiplomFrontUWP.Pages.History" />
     <RootType FullName="DiplomFrontUWP.MainPage" />
-    <RootType FullName="DiplomFrontUWP.Pages.NewExperiment" />
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
@@ -60,18 +60,21 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
       <RootProperty Name="Header" />
+      <RootProperty Name="PlaceholderText" />
       <RootProperty Name="IsEnabled" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ListBox">
+    <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
       <RootProperty Name="HorizontalAlignment" />
       <RootProperty Name="Margin" />
       <RootProperty Name="VerticalAlignment" />
       <RootProperty Name="FontSize" />
       <RootProperty Name="Width" />
       <RootProperty Name="Height" />
+      <RootProperty Name="Header" />
       <RootProperty Name="ItemsSource" />
       <RootEvent Name="SelectionChanged" />
     </RootType>
+    <RootType FullName="DiplomFrontUWP.Pages.NewExperiment" />
     <RootType FullName="DiplomFrontUWP.Settings" />
   </Roots.RootTypes>
 </Roots>

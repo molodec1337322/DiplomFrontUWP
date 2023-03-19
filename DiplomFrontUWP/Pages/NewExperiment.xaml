@@ -9,6 +9,15 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
+        <Button x:Name="cancelNewExperiment" Content="Отмена" Margin="0,0,15,15" VerticalAlignment="Bottom" Width="250" Height="50" HorizontalAlignment="Right" Click="Button_cancel" FontSize="22"/>
+        <Button x:Name="saveNewExperiment" Content="Сохранить" Margin="0,0,300,15" VerticalAlignment="Bottom" Width="250" Height="50" HorizontalAlignment="Right" Click="Button_save" FontSize="22"/>
 
+        <TextBox x:Name="ExperimentDescription" HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="22" Width="500" Height="75" Header="Название эксперимента"/>
+        <TextBox x:Name="ExperimentDirection" HorizontalAlignment="Left" Margin="10,150,0,0" TextWrapping="Wrap" PlaceholderText="от 0 до 1000" VerticalAlignment="Top" FontSize="22" Width="500" Height="75" Header="Direction"/>
+        <TextBox x:Name="ExperimentDeformation" HorizontalAlignment="Left" Margin="10,250,0,0" TextWrapping="Wrap" PlaceholderText="от 0 до 4095" VerticalAlignment="Top" FontSize="22" Width="500" Height="75" Header="Deformation"/>
+        <TextBox x:Name="ExperimentPauseDuration" HorizontalAlignment="Left" Margin="10,350,0,0" TextWrapping="Wrap" PlaceholderText="от 0 до 5000" VerticalAlignment="Top" FontSize="22" Width="500" Height="75" Header="PauseDuration"/>
+        <ComboBox x:Name="ExperimentSideComboBox" HorizontalAlignment="Left" Margin="10,450,0,0" VerticalAlignment="Top" FontSize="22" Width="500" Height="75" Header="Деформация по стороне"/>
+        <TextBox x:Name="ExperimentVideoPathText" HorizontalAlignment="Left" Margin="10,550,0,0" TextWrapping="Wrap" PlaceholderText="Путь" VerticalAlignment="Top" FontSize="22" Width="500" Height="75" Header="Путь сохранения видео эксперемента" IsEnabled="false"/>
+        <Button x:Name="ExperimentVideoPath" HorizontalAlignment="Left" Margin="520,585,0,0" VerticalAlignment="Top" FontSize="22" Width="200" Height="40" Content="Выбо папки" Click="choose_savefolder"/>
     </Grid>
 </Page>

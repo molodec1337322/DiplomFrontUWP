@@ -12,7 +12,7 @@
         <Button x:Name="toMainPageBtn" Content="Главное меню" Margin="0,0,15,15" VerticalAlignment="Bottom" Width="250" Height="50" HorizontalAlignment="Right" Click="Button_ToMainPage" FontSize="22"/>
 
         <TextBox x:Name="CaptureModuleTextBox" HorizontalAlignment="Left" Margin="10,125,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="22" Width="500" Height="100" Header="Модуль захвата" IsEnabled="False"/>
-        <ListBox x:Name="ArduinoPortListBox" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top" FontSize="22" Width="500" Height="75" ItemsSource="{Binding Port}" SelectionChanged="ArduinoPortListBox_SelectionChanged"/>
+        <ComboBox x:Name="ArduinoPortComboBox" HorizontalAlignment="Left" Margin="10,250,0,0" VerticalAlignment="Top" FontSize="22" Width="500" Height="75" ItemsSource="{Binding Port}" SelectionChanged="ArduinoPortComboBox_SelectionChanged"/>
 
     </Grid>
 </Page>

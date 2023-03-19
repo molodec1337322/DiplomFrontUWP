@@ -1,6 +1,7 @@
 ﻿using DiplomFrontUWP.Pages;
 using DiplomFrontUWP.Utils;
 using DiplomFrontUWP.Utils.Interfaces;
+using DiplomFrontUWP.Utils.Responses;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -34,9 +35,21 @@ namespace DiplomFrontUWP
         public MainPage()
         {
             this.InitializeComponent();
+            _apiWorker = new APIWorker();
+            GetInitPortData();
+            ApplicationView.PreferredLaunchViewSize = new Size(1280, 1024); 
+            ApplicationView.PreferredLaunchWindowingMode = ApplicationViewWindowingMode.PreferredLaunchViewSize;
         }
 
-        
+        private async void GetInitPortData()
+        {
+            SettingsData.COMPorts = await _apiWorker.GetAvaliableUSBPorts();
+            if (SettingsData.COMPorts.Count > 0)
+            {
+                SettingsData.SelectedComPort = SettingsData.COMPorts[0].port;
+            }
+        }
+
 
         private void Button_Settings(object sender, RoutedEventArgs e)
         {

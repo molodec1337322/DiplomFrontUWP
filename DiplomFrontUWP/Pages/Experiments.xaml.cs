@@ -26,20 +26,22 @@ namespace DiplomFrontUWP.Pages
     public sealed partial class Experiments : Page
     {
         private IAPIWorker _apiWorker;
-        List<ExperimentResponse> experiments;
+        List<SchemaResponse> experiments;
 
         public Experiments()
         {
+            this.InitializeComponent();
             _apiWorker = new APIWorker();
             GetData();
-            this.InitializeComponent();
         }
 
         private async void GetData()
         {
             experiments = await _apiWorker.GetExperimentsList();
-            foreach(ExperimentResponse experiment in experiments)
+            foreach(SchemaResponse experiment in experiments)
             {
+                List<string> dateStr = experiment.createdAt.Split('T').ToList();
+                experiment.createdAt = dateStr[0] + " " + dateStr[1].Substring(0, dateStr[1].LastIndexOf(":"));
                 experimentsList.Items.Add(experiment);
             }
         }

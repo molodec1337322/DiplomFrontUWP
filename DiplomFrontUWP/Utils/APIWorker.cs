@@ -106,12 +106,12 @@ namespace DiplomFrontUWP.Utils
             }
         }
 
-        public async Task<List<ExperimentResponse>> GetExperimentsList()
+        public async Task<List<SchemaResponse>> GetExperimentsList()
         {
             try
             {
                 string answer = string.Empty;
-                WebRequest request = WebRequest.Create(baseURL + "/api" + "/experiments" + "/getAllList");
+                WebRequest request = WebRequest.Create(baseURL + "/api" + "/experiments" + "/getAllSchemasList");
                 ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
                 request.ContentType = "application/json";
                 request.Method = "GET";
@@ -136,7 +136,7 @@ namespace DiplomFrontUWP.Utils
 
                 response.Close();
 
-                List<ExperimentResponse> experimentsListResponse = JsonConvert.DeserializeObject<List<ExperimentResponse>>(answer);
+                List<SchemaResponse> experimentsListResponse = JsonConvert.DeserializeObject<List<SchemaResponse>>(answer);
                 //Console.WriteLine("Ответ сервера: " + authResponse.message);
 
                 return experimentsListResponse;
@@ -144,15 +144,42 @@ namespace DiplomFrontUWP.Utils
             catch (WebException ex)
             {
                 Console.Write(ex.Message);
-                return new List<ExperimentResponse>();
+                return new List<SchemaResponse>();
             }
         }
 
-        public Task PutNewExperiment()
+        public async Task PutNewExperiment(string description, string videoSaveRoot, string schemaText)
         {
-            throw new NotImplementedException();
-        }
+            try
+            {
+                string answer = string.Empty;
+                WebRequest request = WebRequest.Create(baseURL + "/api" + "/experiments" + "/createNewSchema");
+                ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+                request.ContentType = "application/json";
+                request.Method = "POST";
+                request.Timeout = 5000;
 
-        
+                Console.WriteLine(baseURL);
+
+                using (StreamWriter streamWriter = new StreamWriter(request.GetRequestStream()))
+                {
+                    string json = "{\"description\": \"" + description + "\", \"videoSaveFolderPath\": \"" + videoSaveRoot.Replace("\\", "/") + "\", \"schemaText\": \"" + schemaText + "\"}";
+                    streamWriter.Write(json);
+                }
+
+                WebResponse response = await request.GetResponseAsync();
+
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    answer = await reader.ReadToEndAsync();
+                }
+
+                response.Close();
+            }
+            catch (WebException ex)
+            {
+                Console.Write(ex.Message);
+            }
+        }
     }
 }

@@ -10,11 +10,11 @@
     
 
     <Grid>
-        <Button x:ConnectionId='2' x:Name="settingsBtn" Content="Настройки" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,0,0,0"                         Width="350" Height="100" FontSize="22"/>
-        <Button x:ConnectionId='3' x:Name="experimentsBtn" Content="Эксперементы" VerticalAlignment="Top" Margin="15,125,0,0"                            Width="350" Height="100" FontSize="22"/>
-        <Button x:ConnectionId='4' x:Name="historyBtn" Content="История эксперементов" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,250,0,0"                        Width="350" Height="100" FontSize="22"/>
-        <Button x:ConnectionId='5' x:Name="doExperimentBtn" Content="Провести эксперемент" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,375,0,0"                             Width="350" Height="100" FontSize="22"/>
-        <Button x:ConnectionId='6' x:Name="analyzatorsBtn" Content="Анализаторы" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,500,0,0"                            Width="350" Height="100" FontSize="22"/>
+        <Button x:ConnectionId='2' x:Name="settingsBtn" Content="Настройки" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,50,0,0"                         Width="350" Height="100" FontSize="22"/>
+        <Button x:ConnectionId='3' x:Name="experimentsBtn" Content="Эксперементы" VerticalAlignment="Top" Margin="15,175,0,0"                            Width="350" Height="100" FontSize="22"/>
+        <Button x:ConnectionId='4' x:Name="historyBtn" Content="История эксперементов" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,300,0,0"                        Width="350" Height="100" FontSize="22"/>
+        <Button x:ConnectionId='5' x:Name="doExperimentBtn" Content="Провести эксперемент" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,425,0,0"                             Width="350" Height="100" FontSize="22"/>
+        <Button x:ConnectionId='6' x:Name="analyzatorsBtn" Content="Анализаторы" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="15,550,0,0"                            Width="350" Height="100" FontSize="22"/>
     </Grid>
 </Page>
 

@@ -28,9 +28,9 @@ namespace DiplomFrontUWP
         IAPIWorker _apiWorker;
         public Settings()
         {
+            this.InitializeComponent();
             _apiWorker = new APIWorker();
             GetInitSettingsData();
-            this.InitializeComponent();
         }
 
         private async void GetInitSettingsData()
@@ -41,8 +41,9 @@ namespace DiplomFrontUWP
                 SettingsData.SelectedComPort = SettingsData.COMPorts[0].port;
                 foreach (USBPortsResponse avaliablePort in SettingsData.COMPorts)
                 {
-                    ArduinoPortListBox.Items.Add(avaliablePort.port);
+                    ArduinoPortComboBox.Items.Add(avaliablePort.port);
                 }
+                ArduinoPortComboBox.SelectedValue = SettingsData.SelectedComPort;
             }
         }
 
@@ -51,9 +52,9 @@ namespace DiplomFrontUWP
             Frame.Navigate(typeof(MainPage));
         }
 
-        private void ArduinoPortListBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void ArduinoPortComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            SettingsData.SelectedComPort = ArduinoPortListBox.SelectedValue.ToString();
+            SettingsData.SelectedComPort = ArduinoPortComboBox.SelectedValue.ToString();
         }
     }
 }

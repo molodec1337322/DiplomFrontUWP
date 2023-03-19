@@ -12,7 +12,7 @@ namespace DiplomFrontUWP.Utils.Interfaces
     {
         Task<string> GetTest();
         Task<List<USBPortsResponse>> GetAvaliableUSBPorts();
-        Task<List<ExperimentResponse>> GetExperimentsList();
-        Task PutNewExperiment();
+        Task<List<SchemaResponse>> GetExperimentsList();
+        Task PutNewExperiment(string description, string videoSaveRoot, string schemaText);
     }
 }

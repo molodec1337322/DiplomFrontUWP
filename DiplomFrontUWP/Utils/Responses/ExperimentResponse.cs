@@ -8,7 +8,5 @@ namespace DiplomFrontUWP.Utils.Responses
 {
     public class ExperimentResponse
     {
-        public string Name { get; set; }
-        public string Data { get; set; }
     }
 }
