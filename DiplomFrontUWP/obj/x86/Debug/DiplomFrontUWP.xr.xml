@@ -30,6 +30,17 @@
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="DiplomFrontUWP.Pages.Analyzators" />
+    <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
+      <RootProperty Name="HorizontalAlignment" />
+      <RootProperty Name="Margin" />
+      <RootProperty Name="VerticalAlignment" />
+      <RootProperty Name="FontSize" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Header" />
+      <RootProperty Name="ItemsSource" />
+      <RootEvent Name="SelectionChanged" />
+    </RootType>
     <RootType FullName="DiplomFrontUWP.Pages.DoExperiment" />
     <RootType FullName="Windows.UI.Xaml.Controls.ListView">
       <RootProperty Name="HorizontalAlignment" />
@@ -62,17 +73,6 @@
       <RootProperty Name="Header" />
       <RootProperty Name="PlaceholderText" />
       <RootProperty Name="IsEnabled" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ComboBox">
-      <RootProperty Name="HorizontalAlignment" />
-      <RootProperty Name="Margin" />
-      <RootProperty Name="VerticalAlignment" />
-      <RootProperty Name="FontSize" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Header" />
-      <RootProperty Name="ItemsSource" />
-      <RootEvent Name="SelectionChanged" />
     </RootType>
     <RootType FullName="DiplomFrontUWP.Pages.NewExperiment" />
     <RootType FullName="DiplomFrontUWP.Settings" />

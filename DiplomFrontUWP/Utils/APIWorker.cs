@@ -34,16 +34,6 @@ namespace DiplomFrontUWP.Utils
                 request.Method = "GET";
                 request.Timeout = 5000;
 
-                Console.WriteLine(baseURL);
-
-                /*
-                using (StreamWriter streamWriter = new StreamWriter(request.GetRequestStream()))
-                {
-                    string json = "{\"email\": \"" + email + "\", \"password\": \"" + password + "\", \"nickname\": \"" + nickname + "\"}";
-                    streamWriter.Write(json);
-                }
-                */
-
                 WebResponse response = await request.GetResponseAsync();
 
                 using (StreamReader reader = new StreamReader(response.GetResponseStream()))
@@ -74,16 +64,6 @@ namespace DiplomFrontUWP.Utils
                 request.ContentType = "application/json";
                 request.Method = "GET";
                 request.Timeout = 5000;
-
-                Console.WriteLine(baseURL);
-
-                /*
-                using (StreamWriter streamWriter = new StreamWriter(request.GetRequestStream()))
-                {
-                    string json = "{\"email\": \"" + email + "\", \"password\": \"" + password + "\", \"nickname\": \"" + nickname + "\"}";
-                    streamWriter.Write(json);
-                }
-                */
 
                 WebResponse response = await request.GetResponseAsync();
 
@@ -117,16 +97,6 @@ namespace DiplomFrontUWP.Utils
                 request.Method = "GET";
                 request.Timeout = 5000;
 
-                Console.WriteLine(baseURL);
-
-                /*
-                using (StreamWriter streamWriter = new StreamWriter(request.GetRequestStream()))
-                {
-                    string json = "{\"email\": \"" + email + "\", \"password\": \"" + password + "\", \"nickname\": \"" + nickname + "\"}";
-                    streamWriter.Write(json);
-                }
-                */
-
                 WebResponse response = await request.GetResponseAsync();
 
                 using (StreamReader reader = new StreamReader(response.GetResponseStream()))
@@ -148,7 +118,7 @@ namespace DiplomFrontUWP.Utils
             }
         }
 
-        public async Task PutNewExperiment(string description, string videoSaveRoot, string schemaText)
+        public async Task<string> PutNewExperiment(string description, string videoSaveRoot, string schemaText)
         {
             try
             {
@@ -175,10 +145,41 @@ namespace DiplomFrontUWP.Utils
                 }
 
                 response.Close();
+                return answer;
             }
             catch (WebException ex)
             {
                 Console.Write(ex.Message);
+                return ex.Message;
+            }
+        }
+
+        public async Task<string> StartExperimant(string USBPort, string Direction, string Deformation, string PauseDuration, string side)
+        {
+            try
+            {
+                string answer = string.Empty;
+                //string ds = baseURL + "/api" + "/arduino" + "/setCommands?" + "USBPort=" + USBPort + "&Direction=" + Direction + "&Deformation=" + Deformation + "&PauseDuration" + PauseDuration + "&Side=" + side;
+                WebRequest request = WebRequest.Create(baseURL + "/api" + "/arduino" + "/setCommands?" + "USBPort=" + USBPort + "&Direction=" + Direction + "&Deformation=" + Deformation + "&PauseDuration=" + PauseDuration + "&Side=" + side);
+                ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+                request.ContentType = "application/json";
+                request.Method = "Get";
+                request.Timeout = 5000;
+
+                WebResponse response = await request.GetResponseAsync();
+
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    answer = await reader.ReadToEndAsync();
+                }
+
+                response.Close();
+                return answer;
+            }
+            catch (WebException ex)
+            {
+                Console.Write(ex.Message);
+                return ex.Message;
             }
         }
     }

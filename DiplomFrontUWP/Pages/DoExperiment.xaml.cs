@@ -1,5 +1,6 @@
 ﻿using DiplomFrontUWP.Utils;
 using DiplomFrontUWP.Utils.Interfaces;
+using DiplomFrontUWP.Utils.Responses;
 using System;
 using System.Collections.Generic;
 using System.IO;
@@ -24,13 +25,27 @@ namespace DiplomFrontUWP.Pages
     /// </summary>
     public sealed partial class DoExperiment : Page
     {
-        private IAPIWorker apiWorker;
+        private IAPIWorker _apiWorker;
+        List<SchemaResponse> experiments;
 
         public DoExperiment()
         {
-            apiWorker = new APIWorker();
             this.InitializeComponent();
+            _apiWorker = new APIWorker();
+            ExperimentChooseComboBoxInit();
         }
+
+        private async void ExperimentChooseComboBoxInit()
+        {
+            experiments = await _apiWorker.GetExperimentsList();
+            foreach (SchemaResponse experiment in experiments)
+            {
+                List<string> dateStr = experiment.createdAt.Split('T').ToList();
+                experiment.createdAt = dateStr[0] + " " + dateStr[1].Substring(0, dateStr[1].LastIndexOf(":"));
+                ExperimentChooseComboBox.Items.Add(experiment.description + " Создан: " + experiment.createdAt);
+            }
+        }
+
         private void Button_ToMainPage(object sender, RoutedEventArgs e)
         {
             Frame.Navigate(typeof(MainPage));
@@ -38,18 +53,12 @@ namespace DiplomFrontUWP.Pages
 
         private async void Button_StartExperiment(object sender, RoutedEventArgs e)
         {
-            var res = await apiWorker.GetTest();
+            SchemaResponse schema = experiments[ExperimentChooseComboBox.SelectedIndex];
+            List<string> splittedExperimentData = schema.text.Split(" ").ToList();
+            var res = await _apiWorker.StartExperimant(SettingsData.SelectedComPort, splittedExperimentData[0], splittedExperimentData[1], splittedExperimentData[2], splittedExperimentData[3]);
 
-            ContentDialog noWifiDialog = new ContentDialog()
-            {
-                Title = "Response",
-                Content = res,
-                CloseButtonText = "Ok"
-            };
-
-            await noWifiDialog.ShowAsync();
+            Frame.Navigate(typeof(MainPage));
         }
 
-        
     }
 }

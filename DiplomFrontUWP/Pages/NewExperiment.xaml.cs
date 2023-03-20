@@ -76,7 +76,7 @@ namespace DiplomFrontUWP.Pages
                     {
                         resultText = direction + " " + deformation + " " + pauseDuration + " " + ExperimentSideComboBox.SelectedValue.ToString();
                     }
-                    await _apiWorker.PutNewExperiment(ExperimentDescription.Text, saveVideoPath, resultText);
+                    var res = await _apiWorker.PutNewExperiment(ExperimentDescription.Text, saveVideoPath, resultText);
                     Frame.Navigate(typeof(Experiments));
                 }
             }
