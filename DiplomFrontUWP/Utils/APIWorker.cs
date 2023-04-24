@@ -86,7 +86,7 @@ namespace DiplomFrontUWP.Utils
             }
         }
 
-        public async Task<List<SchemaResponse>> GetExperimentsList()
+        public async Task<List<SchemaResponse>> GetSchemasList()
         {
             try
             {
@@ -106,10 +106,10 @@ namespace DiplomFrontUWP.Utils
 
                 response.Close();
 
-                List<SchemaResponse> experimentsListResponse = JsonConvert.DeserializeObject<List<SchemaResponse>>(answer);
+                List<SchemaResponse> schemasListResponse = JsonConvert.DeserializeObject<List<SchemaResponse>>(answer);
                 //Console.WriteLine("Ответ сервера: " + authResponse.message);
 
-                return experimentsListResponse;
+                return schemasListResponse;
             }
             catch (WebException ex)
             {
@@ -180,6 +180,38 @@ namespace DiplomFrontUWP.Utils
             {
                 Console.Write(ex.Message);
                 return ex.Message;
+            }
+        }
+
+        public async Task<List<ExperimentResponse>> GetExperimentsHistory()
+        {
+            try
+            {
+                string answer = string.Empty;
+                WebRequest request = WebRequest.Create(baseURL + "/api" + "/experiments" + "/getAllExperimentsList");
+                ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+                request.ContentType = "application/json";
+                request.Method = "GET";
+                request.Timeout = 5000;
+
+                WebResponse response = await request.GetResponseAsync();
+
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    answer = await reader.ReadToEndAsync();
+                }
+
+                response.Close();
+
+                List<ExperimentResponse> experimentsListResponse = JsonConvert.DeserializeObject<List<ExperimentResponse>>(answer);
+                //Console.WriteLine("Ответ сервера: " + authResponse.message);
+
+                return experimentsListResponse;
+            }
+            catch (WebException ex)
+            {
+                Console.Write(ex.Message);
+                return new List<ExperimentResponse>();
             }
         }
     }

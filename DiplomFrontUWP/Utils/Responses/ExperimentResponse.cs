@@ -8,5 +8,12 @@ namespace DiplomFrontUWP.Utils.Responses
 {
     public class ExperimentResponse
     {
+        public int Id { get; set; }
+        public string startedAt { get; set; }
+        public string endedAt { get; set; }
+        public string videoPath { get; set; }
+        public string resultPath { get; set; }
+        public int schemaId { get; set; }
+        public int handlerId { get; set; }
     }
 }

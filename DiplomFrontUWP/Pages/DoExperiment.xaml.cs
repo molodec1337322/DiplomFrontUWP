@@ -39,7 +39,7 @@ namespace DiplomFrontUWP.Pages
 
         private async void ExperimentChooseComboBoxInit()
         {
-            experiments = await _apiWorker.GetExperimentsList();
+            experiments = await _apiWorker.GetSchemasList();
             foreach (SchemaResponse experiment in experiments)
             {
                 List<string> dateStr = experiment.createdAt.Split('T').ToList();
