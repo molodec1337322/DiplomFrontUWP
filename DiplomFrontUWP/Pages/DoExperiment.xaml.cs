@@ -6,8 +6,10 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.ServiceModel.Channels;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.Popups;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -55,9 +57,35 @@ namespace DiplomFrontUWP.Pages
         {
             SchemaResponse schema = experiments[ExperimentChooseComboBox.SelectedIndex];
             List<string> splittedExperimentData = schema.text.Split(" ").ToList();
-            var res = await _apiWorker.StartExperimant(SettingsData.SelectedComPort, splittedExperimentData[0], splittedExperimentData[1], splittedExperimentData[2], splittedExperimentData[3]);
 
-            Frame.Navigate(typeof(MainPage));
+            var res = await _apiWorker.StartExperiment(SettingsData.SelectedComPort, splittedExperimentData[0], splittedExperimentData[1], splittedExperimentData[2], splittedExperimentData[3]);
+
+            if(res.Contains("videoRecordOk"))
+            {
+                var okCommand = new UICommand("Ok", cmd => { });
+
+                var dialog = new MessageDialog("Запись эксперемента произведена успешно!", "Завершено");
+                dialog.Options = MessageDialogOptions.None;
+                dialog.Commands.Add(okCommand);
+                dialog.DefaultCommandIndex = 0;
+                dialog.CancelCommandIndex = 0;
+
+                var command = await dialog.ShowAsync();
+            }
+            else
+            {
+                var okCommand = new UICommand("Ok", cmd => { Frame.Navigate(typeof(MainPage)); });
+
+                var dialog = new MessageDialog(res, "Ошибка!");
+                dialog.Options = MessageDialogOptions.None;
+                dialog.Commands.Add(okCommand);
+                dialog.DefaultCommandIndex = 0;
+                dialog.CancelCommandIndex = 0;
+
+                var command = await dialog.ShowAsync();
+            }
+
+            
         }
 
     }

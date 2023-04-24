@@ -154,7 +154,7 @@ namespace DiplomFrontUWP.Utils
             }
         }
 
-        public async Task<string> StartExperimant(string USBPort, string Direction, string Deformation, string PauseDuration, string side)
+        public async Task<string> StartExperiment(string USBPort, string Direction, string Deformation, string PauseDuration, string side)
         {
             try
             {
@@ -164,7 +164,7 @@ namespace DiplomFrontUWP.Utils
                 ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
                 request.ContentType = "application/json";
                 request.Method = "Get";
-                request.Timeout = 5000;
+                request.Timeout = 500000;
 
                 WebResponse response = await request.GetResponseAsync();
 

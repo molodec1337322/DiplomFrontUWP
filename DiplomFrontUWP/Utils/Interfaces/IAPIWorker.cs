@@ -15,6 +15,6 @@ namespace DiplomFrontUWP.Utils.Interfaces
         Task<List<SchemaResponse>> GetExperimentsList();
         Task<string> PutNewExperiment(string description, string videoSaveRoot, string schemaText);
 
-        Task<string> StartExperimant(string USBPort, string Direction, string Deformation, string PauseDuration, string side);
+        Task<string> StartExperiment(string USBPort, string Direction, string Deformation, string PauseDuration, string side);
     }
 }
