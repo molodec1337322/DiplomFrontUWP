@@ -19,7 +19,7 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>7FBB649E4FB5DBF556AA784386CCBF163332E1264012FB9EC8739C1D7ACDC7FB</RegisteredManifestChecksum>
+    <RegisteredManifestChecksum>797C9CAF0A90031C74F8ACB7BF5A299935BD31C814FA192200BDD496BBBB78FE</RegisteredManifestChecksum>
     <RegisteredPackageMoniker>713707b9-15cb-4e0e-b762-43c274efdc85_1.0.0.0_x86__fmx5s3y5hbvc0</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>713707b9-15cb-4e0e-b762-43c274efdc85_fmx5s3y5hbvc0!App</RegisteredUserModeAppID>
     <RegisteredPackageID>713707b9-15cb-4e0e-b762-43c274efdc85</RegisteredPackageID>
@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2023-04-24T16:11:10.598</Modified>
+      <Modified>2023-04-24T18:34:15.078</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\DiplomFrontUWP.exe">
       <PackagePath>entrypoint\DiplomFrontUWP.exe</PackagePath>
-      <Modified>2023-04-24T16:11:09.935</Modified>
+      <Modified>2023-04-24T18:34:14.413</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Molodec\.nuget\packages\newtonsoft.json\13.0.2\lib\netstandard2.0\Newtonsoft.Json.dll">
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
@@ -90,39 +90,39 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\DiplomFrontUWP.xr.xml">
       <PackagePath>DiplomFrontUWP.xr.xml</PackagePath>
-      <Modified>2023-03-20T22:53:07.561</Modified>
+      <Modified>2023-04-24T18:14:26.799</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2023-04-24T16:11:09.837</Modified>
+      <Modified>2023-04-24T18:34:14.314</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\Pages\Analyzators.xbf">
       <PackagePath>Pages\Analyzators.xbf</PackagePath>
-      <Modified>2023-04-24T16:11:09.838</Modified>
+      <Modified>2023-04-24T18:34:14.314</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\Pages\DoExperiment.xbf">
       <PackagePath>Pages\DoExperiment.xbf</PackagePath>
-      <Modified>2023-04-24T16:11:09.838</Modified>
+      <Modified>2023-04-24T18:34:14.314</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\Pages\Experiments.xbf">
       <PackagePath>Pages\Experiments.xbf</PackagePath>
-      <Modified>2023-04-24T16:11:09.838</Modified>
+      <Modified>2023-04-24T18:34:14.314</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\Pages\History.xbf">
       <PackagePath>Pages\History.xbf</PackagePath>
-      <Modified>2023-04-24T16:11:09.838</Modified>
+      <Modified>2023-04-24T18:34:14.315</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\Pages\MainPage.xbf">
       <PackagePath>Pages\MainPage.xbf</PackagePath>
-      <Modified>2023-04-24T16:11:09.838</Modified>
+      <Modified>2023-04-24T18:34:14.315</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\Pages\NewExperiment.xbf">
       <PackagePath>Pages\NewExperiment.xbf</PackagePath>
-      <Modified>2023-04-24T16:11:09.839</Modified>
+      <Modified>2023-04-24T18:34:14.315</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\Pages\Settings.xbf">
       <PackagePath>Pages\Settings.xbf</PackagePath>
-      <Modified>2023-04-24T16:11:09.839</Modified>
+      <Modified>2023-04-24T18:34:14.315</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.19041.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -130,11 +130,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2023-03-19T18:11:47.498</Modified>
+      <Modified>2023-04-24T18:14:27.588</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\Molodec\source\repos\DiplomFrontUWP\DiplomFrontUWP\bin\x86\Debug\Core\DiplomFrontUWP.exe">
       <PackagePath>DiplomFrontUWP.exe</PackagePath>
-      <Modified>2023-04-24T16:11:10.594</Modified>
+      <Modified>2023-04-24T18:34:15.074</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

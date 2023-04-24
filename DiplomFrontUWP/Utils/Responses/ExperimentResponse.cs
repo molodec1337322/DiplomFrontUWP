@@ -13,7 +13,7 @@ namespace DiplomFrontUWP.Utils.Responses
         public string endedAt { get; set; }
         public string videoPath { get; set; }
         public string resultPath { get; set; }
-        public int schemaId { get; set; }
-        public int handlerId { get; set; }
+        public string schemaId { get; set; }
+        public string handlerId { get; set; }
     }
 }

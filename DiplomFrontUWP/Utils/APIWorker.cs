@@ -183,7 +183,7 @@ namespace DiplomFrontUWP.Utils
             }
         }
 
-        public async Task<List<ExperimentResponse>> GetExperimentsHistory()
+        public async Task<List<ExperimentResponse>> GetExperimentsHistoryList()
         {
             try
             {
@@ -213,6 +213,11 @@ namespace DiplomFrontUWP.Utils
                 Console.Write(ex.Message);
                 return new List<ExperimentResponse>();
             }
+        }
+
+        public async Task<List<AnalyzatorResponse>> GetAnalyzatorsList()
+        {
+            throw new NotImplementedException();
         }
     }
 }

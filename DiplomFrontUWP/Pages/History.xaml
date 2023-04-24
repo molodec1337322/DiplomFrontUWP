@@ -10,5 +10,8 @@
 
     <Grid>
         <Button x:Name="toMainPageBtn" Content="Главное меню" Margin="0,0,15,15" VerticalAlignment="Bottom" Width="250" Height="50" HorizontalAlignment="Right" Click="Button_ToMainPage" FontSize="22"/>
+        <Button x:Name="analyzeBtn" Content="Начать анализ" Margin="0,0,300,15" VerticalAlignment="Bottom" Width="250" Height="50" HorizontalAlignment="Right" Click="Button_Analyze" FontSize="22"/>
+        <ListView x:Name="ExperimentsHistoryList" Margin="10, 10, 0, 0" VerticalAlignment="Top" FontSize="22" Width="800" Height="800" HorizontalAlignment="Left" SelectionChanged="ExperimentsHistoryList_SelectionChanged"/>
+        <ComboBox x:Name="AnalyzatorComboBox" HorizontalAlignment="Right" Margin="0,125,15,0" VerticalAlignment="Top" FontSize="22" Width="400" Height="50" ItemsSource="{Binding Port}" SelectionChanged="AnalyzatorComboBox_SelectionChanged"/>
     </Grid>
 </Page>

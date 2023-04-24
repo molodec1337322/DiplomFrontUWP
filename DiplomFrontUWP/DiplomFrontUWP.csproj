@@ -143,6 +143,7 @@
     </Compile>
     <Compile Include="Utils\APIWorker.cs" />
     <Compile Include="Utils\Interfaces\IAPIWorker.cs" />
+    <Compile Include="Utils\Responses\AnalyzatorResponse.cs" />
     <Compile Include="Utils\Responses\ExperimentResponse.cs" />
     <Compile Include="Utils\Responses\SchemaResponse.cs" />
     <Compile Include="Utils\Responses\TestReponse.cs" />
