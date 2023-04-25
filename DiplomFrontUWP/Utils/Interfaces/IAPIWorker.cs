@@ -18,7 +18,7 @@ namespace DiplomFrontUWP.Utils.Interfaces
         Task<string> StartExperiment(string USBPort, string Direction, string Deformation, string PauseDuration, string side);
         Task<List<ExperimentResponse>> GetExperimentsHistoryList();
 
-        Task<List<AnalyzatorResponse>> GetAnalyzatorsList();
+        Task<List<string>> GetAnalyzatorsList();
 
         Task<string> AnalyzeExperement(int experimentId, string analyzatorName);
     }

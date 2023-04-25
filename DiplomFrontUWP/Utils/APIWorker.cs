@@ -215,9 +215,64 @@ namespace DiplomFrontUWP.Utils
             }
         }
 
-        public async Task<List<AnalyzatorResponse>> GetAnalyzatorsList()
+        public async Task<List<string>> GetAnalyzatorsList()
         {
-            throw new NotImplementedException();
+            try
+            {
+                string answer = string.Empty;
+                WebRequest request = WebRequest.Create(baseURL + "/api" + "/analyzator" + "/getAllAnalyzators");
+                ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+                request.ContentType = "application/json";
+                request.Method = "GET";
+                request.Timeout = 5000;
+
+                WebResponse response = await request.GetResponseAsync();
+
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    answer = await reader.ReadToEndAsync();
+                }
+
+                response.Close();
+
+                List<string> analyzatorsListResponse = JsonConvert.DeserializeObject<List<string>>(answer);
+                //Console.WriteLine("Ответ сервера: " + authResponse.message);
+
+                return analyzatorsListResponse;
+            }
+            catch (WebException ex)
+            {
+                Console.Write(ex.Message);
+                return new List<string>();
+            }
+        }
+
+        public async Task<string> AnalyzeExperement(int experimentId, string analyzatorName)
+        {
+            try
+            {
+                string answer = string.Empty;
+                WebRequest request = WebRequest.Create(baseURL + "/api" + "/analyzator" + "/analyze?" + "analyzerName=" + analyzatorName + "&experimentId=" + experimentId);
+                ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
+                request.ContentType = "application/json";
+                request.Method = "Get";
+                request.Timeout = 500000;
+
+                WebResponse response = await request.GetResponseAsync();
+
+                using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+                {
+                    answer = await reader.ReadToEndAsync();
+                }
+
+                response.Close();
+                return answer;
+            }
+            catch (WebException ex)
+            {
+                Console.Write(ex.Message);
+                return ex.Message;
+            }
         }
     }
 }

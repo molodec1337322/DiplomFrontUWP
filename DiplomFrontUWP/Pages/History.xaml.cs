@@ -29,7 +29,7 @@ namespace DiplomFrontUWP.Pages
 
         IAPIWorker _apiWorker;
         List<ExperimentResponse> experiments;
-        List<AnalyzatorResponse> analyzators;
+        List<string> analyzators;
 
         public History()
         {
@@ -55,9 +55,9 @@ namespace DiplomFrontUWP.Pages
 
         private async void Button_Analyze(object sender, RoutedEventArgs e)
         {
-            var res = await _apiWorker.AnalyzeExperement(9, "sdd");
+            var res = await _apiWorker.AnalyzeExperement(Int32.Parse(ExperimentsHistoryList.SelectedValue.ToString().Split(" ")[1].Replace("№", "")), AnalyzatorComboBox.SelectedValue.ToString());
 
-            if (res.Contains("videoRecordOk"))
+            if (res.Contains("analyzeOk"))
             {
                 var okCommand = new UICommand("Ok", cmd => { });
 
@@ -86,7 +86,7 @@ namespace DiplomFrontUWP.Pages
         private async void GetData()
         {
             experiments = await _apiWorker.GetExperimentsHistoryList();
-            //analyzators = await _apiWorker.GetAnalyzatorsList();
+            analyzators = await _apiWorker.GetAnalyzatorsList();
 
             foreach (ExperimentResponse experiment in experiments)
             {
@@ -104,6 +104,13 @@ namespace DiplomFrontUWP.Pages
                     ExperimentsHistoryList.Items.Add("Эксперемент №" + experiment.Id + " Начат: " + experiment.startedAt + " Закончен: " + experiment.endedAt);
                 }
             }
+
+            foreach (string analyzator in analyzators)
+            {
+                AnalyzatorComboBox.Items.Add(analyzator);
+            }
+            
+
             ExperimentsHistoryList.Items.Reverse();
         }
     }
