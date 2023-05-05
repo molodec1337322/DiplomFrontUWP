@@ -118,7 +118,7 @@ namespace DiplomFrontUWP.Utils
             }
         }
 
-        public async Task<string> PutNewExperiment(string description, string videoSaveRoot, string schemaText)
+        public async Task<string> PutNewExperiment(string description, string schemaText)
         {
             try
             {
@@ -133,7 +133,7 @@ namespace DiplomFrontUWP.Utils
 
                 using (StreamWriter streamWriter = new StreamWriter(request.GetRequestStream()))
                 {
-                    string json = "{\"description\": \"" + description + "\", \"videoSaveFolderPath\": \"" + videoSaveRoot.Replace("\\", "/") + "\", \"schemaText\": \"" + schemaText + "\"}";
+                    string json = "{\"description\": \"" + description + "\", \"schemaText\": \"" + schemaText + "\"}";
                     streamWriter.Write(json);
                 }
 

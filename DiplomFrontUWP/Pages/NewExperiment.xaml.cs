@@ -76,7 +76,7 @@ namespace DiplomFrontUWP.Pages
                     {
                         resultText = direction + " " + deformation + " " + pauseDuration + " " + -1;
                     }
-                    var res = await _apiWorker.PutNewExperiment(ExperimentDescription.Text, saveVideoPath, resultText);
+                    var res = await _apiWorker.PutNewExperiment(ExperimentDescription.Text, resultText);
                     Frame.Navigate(typeof(Experiments));
                 }
             }
@@ -84,19 +84,6 @@ namespace DiplomFrontUWP.Pages
             {
                 
             }
-        }
-
-        private async void choose_savefolder(object sender, RoutedEventArgs e)
-        {
-            FolderPicker savePicker = new FolderPicker();
-            // место для сохранения по умолчанию
-            savePicker.SuggestedStartLocation = PickerLocationId.DocumentsLibrary;
-            // устанавливаем типы файлов для сохранения
-            savePicker.CommitButtonText = "Выбрать";
-            savePicker.FileTypeFilter.Add("*");
-            var folder = await savePicker.PickSingleFolderAsync();
-            saveVideoPath = folder.Path;
-            ExperimentVideoPathText.Text = saveVideoPath;
         }
     }
 }
