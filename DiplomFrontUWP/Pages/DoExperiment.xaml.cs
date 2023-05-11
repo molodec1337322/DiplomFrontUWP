@@ -58,6 +58,10 @@ namespace DiplomFrontUWP.Pages
             SchemaResponse schema = experiments[ExperimentChooseComboBox.SelectedIndex];
             List<string> splittedExperimentData = schema.text.Split(" ").ToList();
 
+            startExperiment.IsEnabled = false;
+            toMainPageBtn.IsEnabled = false;
+            ExperimentChooseComboBox.IsEnabled = false;
+
             var res = await _apiWorker.StartExperiment(SettingsData.SelectedComPort, splittedExperimentData[0], splittedExperimentData[1], splittedExperimentData[2], splittedExperimentData[3]);
 
             if(res.Contains("videoRecordOk"))
@@ -85,7 +89,11 @@ namespace DiplomFrontUWP.Pages
                 var command = await dialog.ShowAsync();
             }
 
-            
+            startExperiment.IsEnabled = true;
+            toMainPageBtn.IsEnabled = true;
+            ExperimentChooseComboBox.IsEnabled = true;
+
+
         }
 
     }

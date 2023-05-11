@@ -160,7 +160,7 @@ namespace DiplomFrontUWP.Utils
             {
                 string answer = string.Empty;
                 //string ds = baseURL + "/api" + "/arduino" + "/setCommands?" + "USBPort=" + USBPort + "&Direction=" + Direction + "&Deformation=" + Deformation + "&PauseDuration" + PauseDuration + "&Side=" + side;
-                WebRequest request = WebRequest.Create(baseURL + "/api" + "/arduino" + "/setCommands?" + "USBPort=" + USBPort + "&Direction=" + Direction + "&Deformation=" + Deformation + "&PauseDuration=" + PauseDuration + "&Side=" + side);
+                WebRequest request = WebRequest.Create(baseURL + "/api" + "/arduino" + "/setArduino?" + "USBPort=" + USBPort + "&Direction=" + Direction + "&Deformation=" + Deformation + "&PauseDuration=" + PauseDuration + "&Side=" + side);
                 ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
                 request.ContentType = "application/json";
                 request.Method = "Get";
