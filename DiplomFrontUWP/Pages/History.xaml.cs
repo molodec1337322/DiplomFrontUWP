@@ -55,6 +55,11 @@ namespace DiplomFrontUWP.Pages
 
         private async void Button_Analyze(object sender, RoutedEventArgs e)
         {
+            analyzeBtn.IsEnabled = false;
+            toMainPageBtn.IsEnabled = false;
+            ExperimentsHistoryList.IsEnabled = false;
+            AnalyzatorComboBox.IsEnabled = false;
+
             var res = await _apiWorker.AnalyzeExperement(Int32.Parse(ExperimentsHistoryList.SelectedValue.ToString().Split(" ")[1].Replace("№", "")), AnalyzatorComboBox.SelectedValue.ToString());
 
             if (res.Contains("analyzeOk"))
@@ -81,6 +86,11 @@ namespace DiplomFrontUWP.Pages
 
                 var command = await dialog.ShowAsync();
             }
+
+            analyzeBtn.IsEnabled = true;
+            toMainPageBtn.IsEnabled = true;
+            ExperimentsHistoryList.IsEnabled = true;
+            AnalyzatorComboBox.IsEnabled = true;
         }
 
         private async void GetData()
