@@ -41,15 +41,15 @@ namespace DiplomFrontUWP.Pages
             List<string> strs = new List<string>
             {
                 "Нет",
-                "0", "1", "2", "3", "4", "5", "6", "7"
+                "Да"
             };
 
             foreach (string str in strs)
             {
-                ExperimentSideComboBox.Items.Add(str);
+                ExperimentIsSavePreviousResults.Items.Add(str);
             }
 
-            ExperimentSideComboBox.SelectedIndex = 0;
+            ExperimentIsSavePreviousResults.SelectedIndex = 0;
         }
 
         private void Button_cancel(object sender, RoutedEventArgs e)
@@ -59,22 +59,30 @@ namespace DiplomFrontUWP.Pages
 
         private async void Button_save(object sender, RoutedEventArgs e)
         {
-            if(ExperimentDescription.Text != "" && ExperimentDeformation.Text != "" && ExperimentDirection.Text != "" && ExperimentPauseDuration.Text != "")
+            List<string> SideDeformationStrings = new List<string>
             {
-                int direction = Int32.Parse(ExperimentDirection.Text);
-                int deformation = Int32.Parse(ExperimentDeformation.Text);
-                int pauseDuration = Int32.Parse(ExperimentPauseDuration.Text);
+                ExperimentSide0.Text,
+                ExperimentSide1.Text,
+                ExperimentSide2.Text,
+                ExperimentSide3.Text,
+                ExperimentSide4.Text,
+                ExperimentSide5.Text,
+                ExperimentSide6.Text,
+                ExperimentSide7.Text
+            };
 
-                if(direction > -1 && direction < 1000 && deformation > -1 && deformation < 4095 && pauseDuration > -1 && pauseDuration < 5000)
+            if (ExperimentDescription.Text != "" && IsSideDeformationsStringsNotEmpty(SideDeformationStrings))
+            {
+                if(IsSideDeformationsStringsValInScope(SideDeformationStrings))
                 {
                     string resultText;
-                    if (ExperimentSideComboBox.SelectedValue != "Нет")
+                    if (ExperimentIsSavePreviousResults.SelectedValue != "Нет")
                     {
-                        resultText = direction + " " + deformation + " " + pauseDuration + " " + ExperimentSideComboBox.SelectedValue.ToString();
+                        resultText = GetSideDeformationsStringAsOneString(SideDeformationStrings) + 0;
                     }
                     else
                     {
-                        resultText = direction + " " + deformation + " " + pauseDuration + " " + -1;
+                        resultText = GetSideDeformationsStringAsOneString(SideDeformationStrings) + 1;
                     }
                     var res = await _apiWorker.PutNewExperiment(ExperimentDescription.Text, resultText);
                     Frame.Navigate(typeof(Experiments));
@@ -84,6 +92,41 @@ namespace DiplomFrontUWP.Pages
             {
                 
             }
+        }
+
+        private bool IsSideDeformationsStringsNotEmpty(List<string> list)
+        {
+            foreach(string str in list)
+            {
+                if(str == "")
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private bool IsSideDeformationsStringsValInScope(List<string> list)
+        {
+            foreach (string val in list)
+            {
+                int intVal = Int32.Parse(val);
+                if (intVal < -4096 || intVal > 4096)
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        private string GetSideDeformationsStringAsOneString(List<string> list)
+        {
+            string resultString = "";
+            foreach(string val in list)
+            {
+                resultString += val + " ";
+            }
+            return resultString;
         }
     }
 }

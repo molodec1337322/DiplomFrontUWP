@@ -13,9 +13,18 @@
         <Button x:Name="saveNewExperiment" Content="Сохранить" Margin="0,0,300,15" VerticalAlignment="Bottom" Width="250" Height="50" HorizontalAlignment="Right" Click="Button_save" FontSize="22"/>
 
         <TextBox x:Name="ExperimentDescription" HorizontalAlignment="Left" Margin="10,50,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" FontSize="22" Width="500" Height="75" Header="Название эксперимента"/>
-        <TextBox x:Name="ExperimentDirection" HorizontalAlignment="Left" Margin="10,150,0,0" TextWrapping="Wrap" PlaceholderText="от 0 до 1000" VerticalAlignment="Top" FontSize="22" Width="500" Height="75" Header="Direction"/>
-        <TextBox x:Name="ExperimentDeformation" HorizontalAlignment="Left" Margin="10,250,0,0" TextWrapping="Wrap" PlaceholderText="от 0 до 4095" VerticalAlignment="Top" FontSize="22" Width="500" Height="75" Header="Deformation"/>
-        <TextBox x:Name="ExperimentPauseDuration" HorizontalAlignment="Left" Margin="10,350,0,0" TextWrapping="Wrap" PlaceholderText="от 0 до 5000" VerticalAlignment="Top" FontSize="22" Width="500" Height="75" Header="PauseDuration"/>
-        <ComboBox x:Name="ExperimentSideComboBox" HorizontalAlignment="Left" Margin="10,450,0,0" VerticalAlignment="Top" FontSize="22" Width="500" Height="75" Header="Деформация по стороне"/>
+        
+        <TextBox x:Name="ExperimentSide7" HorizontalAlignment="Left" Margin="10,150,0,0" TextWrapping="Wrap" PlaceholderText="-4096 - 4096" VerticalAlignment="Top" FontSize="22" Width="150" Height="75" Header="Сторона 7"/>
+        <TextBox x:Name="ExperimentSide0" HorizontalAlignment="Left" Margin="310,150,0,0" TextWrapping="Wrap" PlaceholderText="-4096 - 4096" VerticalAlignment="Top" FontSize="22" Width="150" Height="75" Header="Сторона 0"/>
+        <TextBox x:Name="ExperimentSide1" HorizontalAlignment="Left" Margin="610,150,0,0" TextWrapping="Wrap" PlaceholderText="-4096 - 4096" VerticalAlignment="Top" FontSize="22" Width="150" Height="75" Header="Сторона 1"/>
+
+        <TextBox x:Name="ExperimentSide6" HorizontalAlignment="Left" Margin="10,350,0,0" TextWrapping="Wrap" PlaceholderText="-4096 - 4096" VerticalAlignment="Top" FontSize="22" Width="150" Height="75" Header="Сторона 6"/>
+        <TextBox x:Name="ExperimentSide2" HorizontalAlignment="Left" Margin="610,350,0,0" TextWrapping="Wrap" PlaceholderText="-4096 - 4096" VerticalAlignment="Top" FontSize="22" Width="150" Height="75" Header="Сторона 2"/>
+
+        <TextBox x:Name="ExperimentSide5" HorizontalAlignment="Left" Margin="10,550,0,0" TextWrapping="Wrap" PlaceholderText="-4096 - 4096" VerticalAlignment="Top" FontSize="22" Width="150" Height="75" Header="Сторона 5"/>
+        <TextBox x:Name="ExperimentSide4" HorizontalAlignment="Left" Margin="310,550,0,0" TextWrapping="Wrap" PlaceholderText="-4096 - 4096" VerticalAlignment="Top" FontSize="22" Width="150" Height="75" Header="Сторона 4"/>
+        <TextBox x:Name="ExperimentSide3" HorizontalAlignment="Left" Margin="610,550,0,0" TextWrapping="Wrap" PlaceholderText="-4096 - 4096" VerticalAlignment="Top" FontSize="22" Width="150" Height="75" Header="Сторона 3"/>
+
+        <ComboBox x:Name="ExperimentIsSavePreviousResults" HorizontalAlignment="Left" Margin="10,750,0,0" VerticalAlignment="Top" FontSize="22" Width="500" Height="75" Header="Относительное смещение"/>
     </Grid>
 </Page>

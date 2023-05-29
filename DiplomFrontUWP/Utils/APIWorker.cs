@@ -154,13 +154,13 @@ namespace DiplomFrontUWP.Utils
             }
         }
 
-        public async Task<string> StartExperiment(string USBPort, string Direction, string Deformation, string PauseDuration, string side)
+        public async Task<string> StartExperiment(string USBPort, string side1, string side2, string side3, string side4, string side5, string side6, string side7, string side8, string isSaving)
         {
             try
             {
                 string answer = string.Empty;
                 //string ds = baseURL + "/api" + "/arduino" + "/setCommands?" + "USBPort=" + USBPort + "&Direction=" + Direction + "&Deformation=" + Deformation + "&PauseDuration" + PauseDuration + "&Side=" + side;
-                WebRequest request = WebRequest.Create(baseURL + "/api" + "/arduino" + "/setArduino?" + "USBPort=" + USBPort + "&Direction=" + Direction + "&Deformation=" + Deformation + "&PauseDuration=" + PauseDuration + "&Side=" + side);
+                WebRequest request = WebRequest.Create(baseURL + "/api" + "/arduino" + "/setArduino?" + "USBPort=" + USBPort + "&side1=" + side1 + "&side2=" + side2 + "&side3=" + side3 + "&Side4=" + side4 + "&side5=" + side5 + "&side6=" + side6 + "&side7=" + side7 + "&Side8=" + side8 + "&isSaving=" + isSaving);
                 ServicePointManager.ServerCertificateValidationCallback = delegate { return true; };
                 request.ContentType = "application/json";
                 request.Method = "Get";

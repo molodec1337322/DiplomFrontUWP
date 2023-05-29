@@ -62,7 +62,7 @@ namespace DiplomFrontUWP.Pages
             toMainPageBtn.IsEnabled = false;
             ExperimentChooseComboBox.IsEnabled = false;
 
-            var res = await _apiWorker.StartExperiment(SettingsData.SelectedComPort, splittedExperimentData[0], splittedExperimentData[1], splittedExperimentData[2], splittedExperimentData[3]);
+            var res = await _apiWorker.StartExperiment(SettingsData.SelectedComPort, splittedExperimentData[0], splittedExperimentData[1], splittedExperimentData[2], splittedExperimentData[3], splittedExperimentData[4], splittedExperimentData[5], splittedExperimentData[6], splittedExperimentData[7], splittedExperimentData[8]);
 
             if(res.Contains("videoRecordOk"))
             {
